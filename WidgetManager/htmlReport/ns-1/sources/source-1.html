@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > WidgetManagerController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.WidgetManager.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: WidgetManagerController (com.example.WidgetManager.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WidgetManagerController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.WidgetManager.controller;
+&nbsp;
+&nbsp;import com.example.WidgetManager.exception.NoSuchElementFoundException;
+&nbsp;import com.example.WidgetManager.model.WidgetManager;
+&nbsp;import com.example.WidgetManager.service.WidgetManagerService;
+&nbsp;import jakarta.validation.Valid;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.NoSuchElementException;
+&nbsp;import java.util.UUID;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/accolite/WidgetManager&quot;)
+<b class="fc">&nbsp;public class WidgetManagerController {</b>
+&nbsp;    @Autowired
+&nbsp;    private WidgetManagerService widgetManagerService;
+&nbsp;
+&nbsp;    @PostMapping(&quot;/saveWidget&quot;)
+&nbsp;    public WidgetManager saveWidgetData(@RequestBody @Valid WidgetManager widgetManager) {
+<b class="fc">&nbsp;        return widgetManagerService.saveWidgetData(widgetManager);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/widgets&quot;)
+&nbsp;    public List&lt;WidgetManager&gt; fetchWidgetData() {
+<b class="fc">&nbsp;        return widgetManagerService.fetchWidgetData();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/widget/{id}&quot;)
+&nbsp;    public WidgetManager fetchWidgetById(@PathVariable(&quot;id&quot;) UUID id) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;        return widgetManagerService.fetchWidgetById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/widget/{id}&quot;)
+&nbsp;    public void deleteWidgetById(@PathVariable(&quot;id&quot;) UUID id) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;        widgetManagerService.deleteWidgetById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PutMapping(&quot;/widget/{id}&quot;)
+&nbsp;    public WidgetManager updateWidget(@PathVariable(&quot;id&quot;) @Valid UUID id, @RequestBody WidgetManager widgetManager) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;        return widgetManagerService.updateWidget(id, widgetManager);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-04-20 15:33</div>
+</div>
+</body>
+</html>

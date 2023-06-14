@@ -1,0 +1,188 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > WidgetManagerIMPL</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.WidgetManager.service.IMPL</a>
+</div>
+
+<h1>Coverage Summary for Class: WidgetManagerIMPL (com.example.WidgetManager.service.IMPL)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WidgetManagerIMPL</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/26)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.WidgetManager.service.IMPL;
+&nbsp;
+&nbsp;import com.example.WidgetManager.exception.NoSuchElementFoundException;
+&nbsp;import com.example.WidgetManager.model.WidgetManager;
+&nbsp;import com.example.WidgetManager.repository.WidgetManagerRepo;
+&nbsp;import com.example.WidgetManager.service.WidgetManagerService;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.NoSuchElementException;
+&nbsp;import java.util.Objects;
+&nbsp;import java.util.UUID;
+&nbsp;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class WidgetManagerIMPL implements WidgetManagerService {
+&nbsp;    @Autowired
+&nbsp;    private WidgetManagerRepo widgetManagerRepo;
+&nbsp;
+<b class="fc">&nbsp;    public WidgetManagerIMPL(WidgetManagerRepo widgetManagerRepo){</b>
+<b class="fc">&nbsp;        this.widgetManagerRepo=widgetManagerRepo;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public WidgetManager saveWidgetData(WidgetManager widgetManager) {
+&nbsp;
+<b class="fc">&nbsp;        return widgetManagerRepo.save(widgetManager);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;WidgetManager&gt; fetchWidgetData() {
+<b class="fc">&nbsp;      return  widgetManagerRepo.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public WidgetManager fetchWidgetById(UUID id) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;       WidgetManager data = widgetManagerRepo.findById(id).orElse(null);</b>
+<b class="fc">&nbsp;       if(data!=null){</b>
+<b class="fc">&nbsp;        return data;</b>
+&nbsp;       }else {
+<b class="fc">&nbsp;           throw new NoSuchElementFoundException(&quot;Widget with specified id &quot;+ id +&quot; not found&quot;);</b>
+&nbsp;       }
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void deleteWidgetById(UUID id) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;        WidgetManager data = widgetManagerRepo.findById(id).orElse(null);</b>
+<b class="fc">&nbsp;        if(data!=null){</b>
+<b class="fc">&nbsp;            widgetManagerRepo.deleteById(id);</b>
+&nbsp;        }else {
+<b class="fc">&nbsp;            throw new NoSuchElementFoundException(&quot;Widget with specified id &quot;+ id +&quot; not found&quot;);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public WidgetManager updateWidget(UUID id, WidgetManager widgetManager) throws NoSuchElementFoundException {
+<b class="fc">&nbsp;        WidgetManager wData= widgetManagerRepo.findById(id).orElse(null);</b>
+&nbsp;
+<b class="fc">&nbsp;        if(wData!=null) {</b>
+<b class="fc">&nbsp;            if (Objects.nonNull(widgetManager.getWidgetName()) &amp;&amp; !&quot;&quot;.equals(widgetManager.getWidgetName())) {</b>
+<b class="fc">&nbsp;                wData.setWidgetName(widgetManager.getWidgetName());</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if (Objects.nonNull(widgetManager.getWidgetTag()) &amp;&amp; !&quot;&quot;.equals(widgetManager.getWidgetTag())) {</b>
+<b class="fc">&nbsp;                wData.setWidgetTag(widgetManager.getWidgetTag());</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if (Objects.nonNull(widgetManager.getWidgetStatus()) &amp;&amp; !&quot;&quot;.equals(widgetManager.getWidgetStatus())) {</b>
+<b class="fc">&nbsp;                wData.setWidgetStatus(widgetManager.getWidgetStatus());</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if (Objects.nonNull(widgetManager.getWidgetSize()) &amp;&amp; !&quot;&quot;.equals(widgetManager.getWidgetSize())) {</b>
+<b class="fc">&nbsp;                wData.setWidgetSize(widgetManager.getWidgetSize());</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if (Objects.nonNull(widgetManager.getDescription()) &amp;&amp; !&quot;&quot;.equals(widgetManager.getDescription())) {</b>
+<b class="fc">&nbsp;                wData.setDescription(widgetManager.getDescription());</b>
+&nbsp;            }
+<b class="fc">&nbsp;            return widgetManagerRepo.save(wData);</b>
+&nbsp;        }
+&nbsp;        else {
+<b class="fc">&nbsp;            throw new NoSuchElementFoundException(&quot;Widget with specified id &quot;+ id +&quot; not found&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-04-20 15:33</div>
+</div>
+</body>
+</html>
