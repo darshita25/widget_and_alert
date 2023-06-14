@@ -1,0 +1,39 @@
+table{
+    width:100%;
+}
+.allMessage{
+    padding:20px;
+}
+.edit-label{
+    margin:10px;
+    width:180px;
+}
+
+.footer{
+    margin-left: 85vh;
+    margin-bottom: 1vh;
+    float:right;
+    position: fixed;
+    bottom: 0; 
+}
+.clickable{
+    cursor: pointer;
+}
+.page{
+    position:absolute;
+    margin-right: 30px;
+    background-color: transparent;
+
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.alignment{
+    display: flex;
+}
+:hover.rowsElevation {
+    padding: 2px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    box-shadow:  -2px 2px 5px  rgb(48, 54, 139); 
+  }

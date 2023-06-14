@@ -1,0 +1,18 @@
+.card {
+  height:320px;
+  width:340px;
+  color: rgb(53, 50, 50);
+  background: white;
+  margin-top:10x;
+  margin-right:20%;
+  
+}
+.alignment{
+    display: flex;
+}
+button{
+    height: 2rem;
+    width:9rem;
+    margin-left: 5px;
+    margin-right: 8px;
+}

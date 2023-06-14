@@ -1,0 +1,12 @@
+{
+    "/accolite/alertmessenger":{
+        "target" :  "htttp://localhost:8081",
+        "secure" : false
+    },
+    "/accolite/WidgetManager":{
+        "target" :  "htttp://localhost:8082",
+        "secure" : false
+    }
+    
+
+}

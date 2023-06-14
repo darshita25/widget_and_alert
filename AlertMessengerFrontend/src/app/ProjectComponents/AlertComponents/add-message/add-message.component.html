@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+<div [formGroup]="form" class="container allMessage">
+    <mat-card>
+        <h2 style="margin-top:9px;margin-left: 20vh;">Add Alert</h2>
+            <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+                <mat-label>A/C Reg </mat-label>
+                <input  matInput [(ngModel)]="messages.aircraftRegistration" formControlName="validateForm1" >
+                <mat-error>Field is required</mat-error>
+              </mat-form-field>
+          <div>
+            <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+                <mat-label>Flight </mat-label>
+              <input formControlName="validateForm2" matInput  [(ngModel)]="messages.flight" >
+              <mat-error>Field is required</mat-error>  
+            </mat-form-field>
+          </div>
+    <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Desk</mat-label>
+            <input matInput  [(ngModel)]="messages.desk" formControlName="validateForm3">
+            <mat-error> Field is required</mat-error>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline"  floatLabel="always" class="form-elements allMessage">
+            <mat-label>Desk Ctg</mat-label>
+            <input  matInput  [(ngModel)]="messages.deskCategory" formControlName="validateForm4">
+            <mat-error>Field is required</mat-error>
+          </mat-form-field>
+    </div>
+     <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Escalated</mat-label>
+            <input formControlName="validateForm5" matInput  [(ngModel)]="messages.escalated">
+            <mat-error>Field is required</mat-error>
+          </mat-form-field>
+     </div>
+      <!-- <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Ack</mat-label>
+            <input formControlName="validateForm6" matInput  [(ngModel)]="messages.acknowledge">
+            <mat-error>Field is required</mat-error>
+          </mat-form-field>
+      </div> -->
+      <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Ack By</mat-label>
+            <input formControlName="validateForm7" matInput  [(ngModel)]="messages.acknowledgedBy">
+            <mat-error >Field is required</mat-error>
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Received</mat-label>
+            <input formControlName="validateForm8" matInput  [(ngModel)]="messages.received">
+            <mat-error>Field is required</mat-error>
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+            <mat-label>Priority</mat-label>
+            <input formControlName="validateForm9" matInput  [(ngModel)]="messages.priority">
+            <mat-error>Field is required</mat-error>
+          </mat-form-field>
+      </div> 
+          <div class="form-elements allMessage alignment">
+            <div>
+            <button mat-raised-button class="button-class button-size" color="primary" type="button" [disabled]="!form.valid" (click)="addData()">Add Alert</button>
+          </div>
+          <div>
+            <button mat-raised-button class="button-class button-size"  type="button" (click)="onCancel()">Cancel</button>
+          </div>
+          </div>
+    </mat-card>    
+</div> 
+

@@ -1,0 +1,73 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.nav{
+  background-color:rgb(48, 54, 139);
+  color: beige;
+}
+.page{ 
+background-color: transparent;
+}
+table{
+width:20%;
+}
+.allMessage{
+padding:20px;
+}
+.button-class{
+background-color: white;
+color: black;
+position: absolute;
+margin-top: 10px;
+margin-left: 1185px;
+}
+.edit-label{
+margin:10px;
+width:180px;
+}
+.clickable{
+cursor: pointer;
+}
+.column{
+  margin-left:2%;
+  margin-right: 20%;
+}
+.mat-mdc-row .mat-mdc-cell {
+/* border-bottom: 1px solid transparent; */
+/* border-top: 1px solid transparent; */
+cursor: pointer;
+}
+.alignment{
+position:relative;
+display:flex;
+flex-wrap: wrap;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+/* border-color: currentColor; */
+}
+.demo-row-is-clicked {
+/* font-weight: bold; */
+}
+.footer{
+margin-left: 135vh;
+float:right;
+position: fixed;
+bottom: 0;
+}
+.card {
+    max-width: 400px;
+    color: rgb(53, 50, 50);
+    background: white;
+    margin-top: 100x;
+    margin-left:35%;
+    
+  }
+.changecolor{
+    background-color: rgb(150, 127, 255);
+}
+:hover.rowsElevation{
+  padding: 2px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    box-shadow:  -2px 2px 5px  rgb(48, 54, 139); 
+}

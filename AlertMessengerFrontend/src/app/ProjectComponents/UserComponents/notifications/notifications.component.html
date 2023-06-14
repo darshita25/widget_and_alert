@@ -1,0 +1,113 @@
+<mat-toolbar class="nav">
+  <span class="example-spacer"></span>
+    <span style="text-align: center;padding-left: 80px;">NEW MESSAGES</span>
+    <span class="example-spacer"></span>
+    <a mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/notifications">
+        <mat-icon [matBadge]="unreadMessages?unreadMessages.length:0" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" matBadgeColor="warn">notifications</mat-icon>
+      </a>
+      <a mat-icon-button title="Logout" class="example-icon favorite-icon" (click)="logOut()" aria-label="Example icon-button with heart icon">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+      </a>
+  </mat-toolbar>
+
+  <div>
+    <mat-form-field style="margin-left: 20px;" class="edit-label"> 
+      <input class="page" (keyup)="applyFilter($event.target.value)" matInput>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="container allMessage " *ngIf="clickedRows.size==0">
+    <mat-table [dataSource]=dataSource class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="aircraftRegistration">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>AC_Reg</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.aircraftRegistration}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="flight">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Flight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.flight}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="desk">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Desk</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.desk}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="deskCategory">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Desk_Ctg </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.deskCategory}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="escalated">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Escalated</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.escalated}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acknowledge">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ack </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.acknowledge}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acknowledgedBy">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ack_By</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.acknowledgedBy}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="received">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Recieved </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.received}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="priority">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Priority</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row class="rowsElevation" *matRowDef="let row; columns: displayedColumns;" (click)="clickedRows.clear()" (click)="clickedRows.add(row)"
+        [class.demo-row-is-clicked]="clickedRows.has(row)" [class.changecolor]="row.acknowledge=='NO'">
+        </mat-row>
+        </mat-table>
+  </div>
+  <div class="alignment" *ngIf="clickedRows.size==1">
+  <div class="container allMessage">
+    <mat-table [dataSource]=dataSource class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="aircraftRegistration">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>AC_Reg</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.aircraftRegistration}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="flight">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Flight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.flight}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="desk">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Desk</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.desk}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="deskCategory">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Desk_Ctg </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.deskCategory}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acknowledgedBy">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ack_By</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.acknowledgedBy}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="received">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Recieved </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.received}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="priority">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Priority</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumn"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumn;" (click)="clickedRows.clear()" (click)="clickedRows.add(row)"
+        [class.demo-row-is-clicked]="clickedRows.has(row)" [class.changecolor]="row.acknowledge=='NO'">
+        </mat-row>
+        </mat-table>
+      </div>
+      <span class="example-spacer"></span>
+    <div class="allMessage container column">
+    <app-notifications-child [curRow]="clickedRows" (closeEvent)="closeSummary()"></app-notifications-child>
+    </div>
+  </div>
+  <div *ngIf="dataSource.data.length==0" class="container allMessage ">
+  <span style="color:rgb(14, 14, 109)"><b>No data Available </b></span>
+  </div>
+  <div class="container allMessage footer" style="width:550px">
+    <mat-paginator class="page" [pageSizeOptions]="[4, 6,8,10]" [pageSize]="4"
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>

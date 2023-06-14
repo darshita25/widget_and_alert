@@ -1,0 +1,18 @@
+
+<mat-toolbar class="nav">
+    <span class="example-spacer"></span>
+    <span class="navText">ALERT MESSSENGER AND WIDGET MANAGER </span>
+    <span class="example-spacer"></span>
+    <a mat-icon-button title="Logout" class="example-icon favorite-icon" (click)="logOut()">
+        <mat-icon class="logButton" aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+    </a>
+</mat-toolbar>
+
+<div class="landing">
+        <mat-card class="alert_redirect" routerLink="/card-component">
+            <mat-card-title>Alert Messenger</mat-card-title>
+        </mat-card>
+        <mat-card class="widget_redirect"  routerLink="/card-widget">
+                <mat-card-title>Widget Manager</mat-card-title>
+        </mat-card>
+</div>

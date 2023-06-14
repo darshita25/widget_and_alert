@@ -1,0 +1,74 @@
+<app-widget-navbar></app-widget-navbar>
+<div [formGroup]="buttonForm" class="container allMessage">
+    <mat-card>
+       <div>
+            <h2 style="text-align: center;">Add New Widget Details</h2>
+        <div>
+                <mat-form-field appearance="outline" floatLabel="always" class="form-elements allMessage">
+                    <mat-label>Widget Name </mat-label>
+                    <input matInput formControlName="validateForm" [(ngModel)]="form.widgetName">
+                    <!-- <mat-hint style="color:red">Widget Name is required</mat-hint> -->
+                    <mat-error>Field is required.</mat-error>
+                  </mat-form-field>
+        </div>
+        <br>
+        <div>
+                <mat-form-field appearance="outline" class="form-elements allMessage" floatLabel="always">
+                    <mat-label>Widget Tag </mat-label>
+                    <input matInput formControlName="validateForm1" [(ngModel)]="form.widgetTag">
+                    <mat-error>Field is required.</mat-error>
+                    <!-- <mat-hint style="color:red">Widget Tag is required</mat-hint> -->
+                  </mat-form-field>
+        </div>
+
+        <br>
+        <div>
+            <mat-form-field appearance="outline" class="form-elements allMessage" floatLabel="always">
+                <mat-label>Widget Status</mat-label>
+                <!-- <input matInput [(ngModel)]="form.widgetStatus"> -->
+                <mat-select formControlName="validateForm2" [(ngModel)]="form.widgetStatus">
+                  <mat-option *ngFor="let option of options"[value]="option.value1">
+                    {{option.viewValue1}}
+                  </mat-option>
+                </mat-select>
+                <!-- <mat-hint style="color:red">Widget Status is required</mat-hint> -->
+                <mat-error>Field is required.</mat-error>
+              </mat-form-field>
+            </div>
+            <br>
+        <div>
+            <mat-form-field appearance="outline" class="form-elements allMessage" floatLabel="always">
+                <mat-label>Widget Size</mat-label>
+                <!-- <input matInput [(ngModel)]="form.widgetSize"> -->
+                <mat-select formControlName="validateForm3" [(ngModel)]="form.widgetSize">
+                  <mat-option *ngFor="let sizes of size"[value]="sizes.value">
+                    {{sizes.viewValue}}
+                  </mat-option>
+                </mat-select>
+                <!-- <mat-hint style="color:red">Widget Size is required</mat-hint> -->
+                <mat-error>Field is required.</mat-error>
+              </mat-form-field>
+        </div>  
+        <br>
+         <div>
+            <mat-form-field appearance="outline" class="form-elements allMessage" floatLabel="always">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="validateForm4" [(ngModel)]="form.description" maxlength="100" #desc></textarea>
+                <mat-hint align="end">{{desc.value.length}}/100</mat-hint>
+                <mat-error>Field is required.</mat-error>
+              </mat-form-field>
+         </div> 
+         <br>
+          <div class="form-elements allMessage alignment">
+            <div>
+            <button mat-raised-button class="button-class button-size" color="primary" type="button" [disabled]="!buttonForm.valid" (click)="addData()">Add Widget</button>
+            </div>
+            <div>
+            <button mat-raised-button class="button-class button-size" type="button" routerLink="/card-widget">Cancel</button>
+            </div>
+          </div>
+      </div>
+      <br>
+      <br>
+    </mat-card>
+    </div>

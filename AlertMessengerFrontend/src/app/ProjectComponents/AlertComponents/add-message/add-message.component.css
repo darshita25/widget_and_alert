@@ -1,0 +1,25 @@
+
+.form-elements{
+    width:350px;
+    height:1px;
+}
+.allMessage{
+    padding:30px;
+    padding-bottom: 50px;
+}
+.h-color{
+    color:gray;
+}
+.button-size{
+  margin-bottom:100px;
+  margin-left: 20px;
+  padding: 10px;
+  
+}
+.alignment{
+    display: flex;
+}
+button {
+	width: 9rem;
+    height: 2rem;
+}

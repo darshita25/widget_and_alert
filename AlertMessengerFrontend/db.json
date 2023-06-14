@@ -1,0 +1,83 @@
+{
+  "data": [
+    {
+      "messageId": 1,
+      "aircraftRegistration": "AIRCERAFT-1",
+      "flight": "JKJK",
+      "desk": "KL;;",
+      "deskCategory": "KMCV",
+      "escalated": "V",
+      "acknowledge": "VKOO",
+      "acknowledgedBy": "V",
+      "received": "V",
+      "priority": "V",
+      "isPublished": 0,
+      "id": 1
+    },
+    {
+      "messageId": 2,
+      "aircraftRegistration": "njk",
+      "flight": "",
+      "desk": "",
+      "deskCategory": "",
+      "escalated": "",
+      "acknowledge": "",
+      "acknowledgedBy": "",
+      "received": "",
+      "priority": "",
+      "isPublished": 0,
+      "id": 2
+    },
+    {
+      "widgetId": 3,
+      "widgetName": "",
+      "widgetTag": "",
+      "widgetStatus": "",
+      "widgetSize": "",
+      "description": "",
+      "id": 3
+    }
+  ],
+  "data2":[
+    {
+      "widgetId": 2,
+      "widgetName": "darshita",
+      "widgetTag": "gupta",
+      "widgetStatus": "",
+      "widgetSize": "",
+      "description": "",
+      "havedelete":false,
+      "id": 2
+    },
+    {
+      "widgetId": 3,
+      "widgetName": "darshita",
+      "widgetTag": "hello",
+      "widgetStatus": true,
+      "widgetSize": "2 x",
+      "description": "tygfsdnvn",
+      "havedelete":false,
+      "id": 3
+    },
+    {
+      "widgetId": 4,
+      "widgetName": "darshita",
+      "widgetTag": "gupta",
+      "widgetStatus": false,
+      "widgetSize": "",
+      "description": "",
+      "havedelete":false,
+      "id": 4
+    },
+    {
+      "widgetId": 5,
+      "widgetName": "darshita",
+      "widgetTag": "gupta",
+      "widgetStatus": true,
+      "widgetSize": "4 x",
+      "description": "",
+      "havedelete":false,
+      "id": 5
+    }
+  ]
+}

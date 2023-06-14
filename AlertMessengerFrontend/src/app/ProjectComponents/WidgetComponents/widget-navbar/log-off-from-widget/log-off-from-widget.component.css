@@ -1,0 +1,20 @@
+.buttonNo{
+    margin-left:20px ;
+    background-color: antiquewhite;
+    width: 20px;
+    margin-bottom: 4px;
+}
+.buttonYes{
+    margin-left: 20px;
+    width: 20px;
+    margin-bottom: 4px;
+}
+.mat-card.scrollable-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .deleteCard{
+    width: 400px;
+    overflow: hidden;
+  }

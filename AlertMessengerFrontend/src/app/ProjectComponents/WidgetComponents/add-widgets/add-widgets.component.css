@@ -1,0 +1,30 @@
+.form-elements{
+    width:350px;
+    height:1px;
+}
+.allMessage{
+    padding:30px;
+}
+.button-class{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:188px;
+}
+.alignment{
+    display: flex;
+}
+.button-class1{
+    margin-top:5px;
+    margin-bottom: 5px;
+    margin-left:15px;
+}
+.button-size{
+    margin-bottom:100px;
+    margin-left: 20px;
+    padding: 10px;
+    
+}
+button {
+	width: 9rem;
+    height: 2rem;
+}

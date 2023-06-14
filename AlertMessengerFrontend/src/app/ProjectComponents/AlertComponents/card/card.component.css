@@ -1,0 +1,64 @@
+
+table{
+    
+    width:20%;
+    margin:20px;
+}
+@media screen and (max-width: 400px) {
+    .column{
+      width: 100%;
+      flex-wrap: wrap;
+    }
+}
+
+.page{
+    position:absolute;
+    margin-right: 30px;
+    background-color: transparent;
+
+}
+.footer{
+        margin-left: 130vh;
+        margin-bottom :2vh;
+        float:right;
+        position: fixed;
+        bottom: 0;     
+}
+.edit-label{
+    margin:10px;
+    width:180px;
+}
+.posture{
+    flex-wrap: wrap;
+}
+.allMessage{
+    padding:20px;
+}
+.alignment{
+    display: flex;
+    flex-wrap: wrap;
+}
+.clickable{
+    cursor: pointer;
+}
+.mat-mdc-row .mat-mdc-cell {
+    /* border-bottom: 1px solid transparent; */
+    /* border-top: 1px solid transparent; */
+    cursor: pointer;
+} 
+.mat-mdc-row:hover .mat-mdc-cell {
+    /* border-color: currentColor; */
+}
+.demo-row-is-clicked {
+    font-weight: bold;
+    /* color: brown; */
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+:hover.rowsElevation{
+    padding: 2px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    box-shadow:  -2px 2px 5px  rgb(48, 54, 139); 
+      }

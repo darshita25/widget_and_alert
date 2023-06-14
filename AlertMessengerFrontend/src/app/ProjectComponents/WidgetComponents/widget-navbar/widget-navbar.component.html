@@ -1,0 +1,16 @@
+<mat-toolbar class="nav">
+    <a mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/home-page">
+      <mat-icon fxLayout="row" fxShow.gt-sm aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </a>
+    
+    <span class="example-spacer"></span>
+
+    <span class="widget-text">WIDGET MANAGER</span>
+      
+
+    <span class="example-spacer"></span>
+
+    <a mat-icon-button title="Logout" class="example-icon favorite-icon" (click)="logOut()" aria-label="Example icon-button with heart icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+    </a>
+  </mat-toolbar>

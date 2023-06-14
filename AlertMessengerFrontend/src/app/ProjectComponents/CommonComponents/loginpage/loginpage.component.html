@@ -1,0 +1,29 @@
+<div [formGroup]="form" class="container alllogin">
+    <mat-card class="login-box">
+       <div>
+            <h2 class="h-color" style="text-align: center;">Login</h2>
+        <div>
+            <mat-form-field appearance="outline" floatLabel="always" class="edit-label" >
+                <mat-label>UserName</mat-label>
+                <input formControlName="userId" matInput [(ngModel)]="logins.userId"  (change)="logins.userId=logins.userId.trim()" [formControl]="validateForm1">
+                <mat-error *ngIf="validateForm1.hasError('required')"></mat-error>
+              </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" floatLabel="always" class="edit-label">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput [(ngModel)]="logins.password" (change)="logins.password=logins.password.trim()" [type]="hide ? 'password' : 'text'" [formControl]="validateForm2">
+            <mat-error *ngIf="validateForm1.hasError('required')"></mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field> 
+        </div>
+        <div >
+            <button mat-raised-button class="button-class" type="button" 
+            color="primary"
+            (click)="clickButton()" [disabled]="form.invalid">Login</button>
+          </div>
+        </div>
+        </mat-card>
+</div>
