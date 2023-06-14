@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MessageService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.accolite.alertMessenger.service</a>
+</div>
+
+<h1>Coverage Summary for Class: MessageService (com.accolite.alertMessenger.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">MessageService</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.accolite.alertMessenger.service;
+&nbsp;
+&nbsp;import com.accolite.alertMessenger.exception.MessageNotFoundException;
+&nbsp;import com.accolite.alertMessenger.model.Message;
+&nbsp;import org.hibernate.persister.entity.SingleTableEntityPersister;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Optional;
+&nbsp;import java.util.UUID;
+&nbsp;
+&nbsp;public interface MessageService {
+&nbsp;
+&nbsp;    Message saveData(Message message);
+&nbsp;
+&nbsp;    List&lt;Message&gt; getData();
+&nbsp;
+&nbsp;    void deleteData(UUID id);
+&nbsp;
+&nbsp;    Message updateData(Message message, UUID id);
+&nbsp;
+&nbsp;    public Message publishData(Message message, UUID messageId) throws MessageNotFoundException;
+&nbsp;
+&nbsp;    public Message getDataById(UUID messageId) throws MessageNotFoundException;
+&nbsp;
+&nbsp;    public Message acknowledgeData(Message message, UUID messageId) throws MessageNotFoundException;
+&nbsp;
+&nbsp;    public List&lt;Message&gt; getUnreadDataForUser();
+&nbsp;
+&nbsp;    public List&lt;Message&gt; getReadDataForUser();
+&nbsp;
+&nbsp;    public List&lt;Message&gt; getPublishedData();
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-04-21 13:18</div>
+</div>
+</body>
+</html>

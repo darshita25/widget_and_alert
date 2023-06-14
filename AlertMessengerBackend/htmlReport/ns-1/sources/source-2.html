@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MessageRepo</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.accolite.alertMessenger.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: MessageRepo (com.accolite.alertMessenger.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">MessageRepo</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.accolite.alertMessenger.repository;
+&nbsp;
+&nbsp;import com.accolite.alertMessenger.model.Message;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.data.jpa.repository.Query;
+&nbsp;import org.springframework.stereotype.Repository;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.UUID;
+&nbsp;
+&nbsp;@Repository
+&nbsp;public interface MessageRepo extends JpaRepository&lt;Message, UUID&gt; {
+&nbsp;
+&nbsp;    @Query(value = &quot;select * from message where is_published = 1 and acknowledge = &#39;NO&#39;&quot;, nativeQuery = true)
+&nbsp;    public List&lt;Message&gt; getUnreadMessagesForUser();
+&nbsp;
+&nbsp;    @Query(value = &quot;select * from message where is_published = 1 and acknowledge = &#39;YES&#39;&quot;, nativeQuery = true)
+&nbsp;    public List&lt;Message&gt; getReadMessagesForUser();
+&nbsp;
+&nbsp;    @Query(value = &quot;select * from message where is_published = 1&quot;, nativeQuery = true)
+&nbsp;    public List&lt;Message&gt; getPublishedData();
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-04-21 13:33</div>
+</div>
+</body>
+</html>
